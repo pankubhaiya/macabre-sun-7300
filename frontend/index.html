@@ -1,35 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Solutions </title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
-<body class="backgroud">  
-   <div class="main">
+<body class="backgroud">
+    <div class="main">
         <img class="logo" src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png" alt="">
         <div class="data">
             <div class="category">
-              <span><i class="fa  fa-plane-up"></i>Flights</span>
-              <span><i class="fa solid fa-hotel"></i>Hotels</span>
-              <span><i class="fa solid fa-house"></i>Homestays</span>
-              <span><i class="fa solid fa-people-roof"></i>Holiday Packages</span>
-              <span><i class="fa solid fa-train-tram"></i>Trains</span>
-              <span><i class="fa solid fa-bus"></i>Buses</span>
-              <span><i class="fa solid fa-taxi"></i>Cabs</span>
-              <span><i class="fa solid fa-sack-dollar"></i>Forex</span>
-              <span><i class="fa solid fa-plane-departure"></i>Charter Flights</span>
-              <span><i class="fa solid fa-person-walking-with-cane"></i>Activities</span>
-              
-            </div>
-            <div class="tickets">
+                <span><i class="fa  fa-plane-up"></i>Flights</span>
+                <span><i class="fa solid fa-hotel"></i>Hotels</span>
+                <span><i class="fa solid fa-house"></i>Homestays</span>
+                <span><i class="fa solid fa-people-roof"></i>Holiday Packages</span>
+                <span><i class="fa solid fa-train-tram"></i>Trains</span>
+                <span><i class="fa solid fa-bus"></i>Buses</span>
+                <span><i class="fa solid fa-taxi"></i>Cabs</span>
+                <span><i class="fa solid fa-sack-dollar"></i>Forex</span>
+                <span><i class="fa solid fa-plane-departure"></i>Charter Flights</span>
+                <span><i class="fa solid fa-person-walking-with-cane"></i>Activities</span>
 
             </div>
+            <div class="tickets">
+                <div class="ticket-type">
+                    <div>
+                        <span><input type="radio" name="content" value="ONE WAY"><label for="contactChoice1">ONE WAY</label></span>
+                       
+                        <span><input type="radio" name="content" value="ROUND TRIP"> <label for="contactChoice1">ROUND TRIP</label></span>
+                       
+                        <span><input type="radio" name="content" value="MULTI CITY"><label for="contactChoice1">MULTI CITY</label> </span>
+                       
+                    </div>
+                    <div>
+                        <span id="booking"><b>Book International and Domestic Flights</b> </span>
+                    </div>
+                </div>
+                <div class="city">
+                    <div id="fd">
+                        <p>From</p>
+                        <input id="fs" type="search">
+                        <h1 id="from">Pune</h1>
+                       
+                        
+                    </div>
+                    <div id="td">
+                        <p>TO</p>
+                        <input id="ts" type="search">
+                        <h1 id="to"> Delhi</h1>
+                    </div>
+
+                    <div id="ddiv">
+                        <p>DEPARTURE</p>
+                        <input id="dd" type="date">
+                        <h2 id="departur">24 Feb23
+
+                            Friday</h2>
+                    </div>
+
+                    <div id="rdiv">
+                        <p>RETURN</p>
+                        <input id="rd" type="date">
+                        <h2 id="ret">25 Feb23 Friday</h2>
+
+                    </div>
+
+                    <div>
+                        <p>TRAVELLERS & CLASS</p>
+                        <h2>1 Traveller</h2>
+                        <p>  Premium Economy</p>
+                    </div>
+                </div>
+
+                <div class="select-type">
+                    <div>
+                        <p>Select A
+                            Fare Type:
+                        </p>
+                    </div>
+                    <span>
+                        <input type="radio">
+                        <p>Regular
+                            Fares</p>
+                    </span>
+                    <span>
+
+                        <input type="radio">
+                        <p>Armed Forces
+                            Fares</p>
+                    </span>
+                    <span>
+                        <input type="radio">
+                        <p>Student
+                            Fares</p>
+                    </span>
+                    <span>
+                        <input type="radio">
+                        <p>Senior Citizen
+                            Fares</p>
+                    </span>
+                    <span>
+                        <input type="radio">
+                        <p>Doctors & Nurses
+                            Fares</p>
+                    </span>
+                </div>
+
+            </div>
+
         </div>
-    </div>  
+    </div>
 </body>
+
 </html>
+<script src="./index.js"></script>

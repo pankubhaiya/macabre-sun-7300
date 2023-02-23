@@ -25,7 +25,7 @@ position: relative;
 }
 .category{
     background-color: white;
-    width: 70%;
+    width: 80%;
     margin-top: 15px;
     border-radius: 10px;
     box-shadow:0px 1px 15px 1px #7a7a7a;
@@ -50,10 +50,80 @@ position: relative;
 
 .tickets{
     background-color: white;
-    width: 100%;
-    height: 350px;
+    width: 95%;
+    height: 300px;
     position: absolute;
     top: 60px;
     z-index: 1;
     border-radius: 10px;
+    padding: 20px;
+    /* display: flex; */
+   
 }
+.ticket-type{
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+.ticket-type span{
+    margin: 10px;
+}
+.ticket-type div:nth-child(1) span{
+    padding: 3px;
+    /* margin: 1px; */
+    background-color: #f2ecec;
+    border-radius: 8px;
+}
+#booking{
+   text-align: right;
+   color: rgb(81, 80, 80);
+   
+}
+.city{
+     display: flex;
+     
+}
+.city div{
+margin-top: 20px;
+    /* padding: 10px; */
+    padding-left: 20px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+   
+}
+.city div:nth-child(5){
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.city div:nth-child(1){
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.city div p{
+ font-size: 15px;
+}
+.city div input{
+    display: none;
+  width: 90%;
+}
+
+.select-type{
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    
+}
+.select-type p{
+    font-size: 15px;
+    margin: 10px;
+}
+.select-type span{
+    display: flex;
+    padding: 1px;
+    margin: 1px;
+    background-color: #f5eeee;
+    border-radius: 5px;
+   
+}
+
+
