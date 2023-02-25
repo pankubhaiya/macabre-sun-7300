@@ -1,7 +1,6 @@
 
 const express = require("express")
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
+
 require("dotenv").config()
 const hotalrouter = express.Router()
 const {hotalmodel} = require("../model/model")
