@@ -1,26 +1,26 @@
 
 let mongoose = require("mongoose")
 
-let adminSchema = mongoose.Schema({
+// let adminSchema = mongoose.Schema({
 
-      name:{type:String,required:true},
-      email:{type:String,required:true},
-      password:{type:String,required:true}
-},{
-    versionKey:false
-})
+//       name:{type:String,required:true},
+//       email:{type:String,required:true},
+//       password:{type:String,required:true}
+// },{
+//     versionKey:false
+// })
 
-let adminmodel = mongoose.model("admin",adminSchema)
+// let adminmodel = mongoose.model("admin",adminSchema)
  
-let userSchema = mongoose.Schema({
+// let userSchema = mongoose.Schema({
 
-    name:{type:String,required:true},
-    email:{type:String,required:true},
-    password:{type:String,required:true}
-},{
-  versionKey:false
-})
-let usermodel = mongoose.model("user",userSchema)
+//     name:{type:String,required:true},
+//     email:{type:String,required:true},
+//     password:{type:String,required:true}
+// },{
+//   versionKey:false
+// })
+// let usermodel = mongoose.model("user",userSchema)
 
 let hotalSchema = mongoose.Schema({
   
@@ -35,7 +35,7 @@ let hotalSchema = mongoose.Schema({
   locality: {type:String,required:true},
   location:{type:String,required:true},
   city:{type:String,required:true},
-  price: {type:Number,required:true}
+  price:{type:String,required:true}
     
 },{
 versionKey:false
@@ -43,4 +43,4 @@ versionKey:false
 
 let hotalmodel = mongoose.model("hotal",hotalSchema)
 
-module.exports={adminmodel,usermodel,hotalmodel}
+module.exports={hotalmodel}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/logo2.png">
+    <title>App & Intregration
+    </title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+
+
+
+        /* nav bar css end */
+
+
+        /* <!-- Integrations--> */
+
+
+        #search-bar {
+            width: 99%;
+            margin: auto;
+        }
+
+        #search-bar input {
+
+            font-size: 20px;
+            display: block;
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        }
+
+        #filter {
+            background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #53b2fe, #065af3));
+        }
+
+        #integration {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 90%;
+            margin: auto;
+            gap: 20px;
+            font-size: 15px;
+            text-align: center;
+            padding: 30px;
+           
+
+
+        }
+
+
+        #integration img {
+            width: 70%;
+            display: block;
+            margin: auto;
+
+
+        }
+
+        #integration div {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            border-radius: 10px;
+            padding: 70px 30px 70px 30px;
+            background-color: aliceblue;
+            justify-content: space-between;
+
+        }
+
+        #integration div:hover {
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            cursor: pointer;
+
+        }
+
+        #Reviews {
+            width: 99%;
+            text-align: center;
+            padding: 40px 10px 40px 10px;
+            margin: auto;
+            background-color: rgb(243, 207, 177);
+            font-size: 25px;
+        }
+
+        #fimg {
+            width: 70%;
+            height: 45%;
+            margin-top: 20px;
+            margin-left: 30px;
+
+
+        }
+
+        footer>div>div {
+            margin: 30px;
+        }
+
+        #fbtn {
+            width: 8%;
+            background-color: rgb(27, 193, 27);
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-top: -10px;
+
+
+
+        }
+
+        #fbtn:hover {
+            background-color: green;
+        }
+
+        #fil {
+            width: 50%;
+            margin: auto;
+        }
+
+        #fil select {
+            display: block;
+            width: 50%;
+            margin: auto;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            border: none;
+        }
+
+        #fil select:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        body {
+            background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #dde0e3, #5e84cb));
+        }
+
+        #btn {
+            justify-content: space-between;
+            width: 100%;
+            margin-left: 100px;
+        }
+
+        button {
+            /* display: block; */
+            /* width: 60%; */
+            padding: 15px;
+            /* display: block; */
+            margin: auto;
+            margin-top: 20px;
+            background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #53b2fe, #065af3));
+            color: beige;
+            border-radius: 5px;
+            border: none;
+            margin-left: 30px;
+
+
+        }
+
+        #inputText {
+            background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #79bef6, #2e71ed));
+
+        }
+
+        /* footer css end */
+    </style>
+</head>
+
+<body>
+
+
+    <!-- nav bar end -->
+
+    <!-- Integrations div start -->
+
+
+    <div style="display: flex;">
+        <div id="fil">
+            <select id="filter">
+                <option value="">All Hotals</option>
+                <option value="delhi">delhi</option>
+                <option value="pune">pune</option>
+                <option value="banglore">banglore</option>
+                <option value="mumbai">mumbai</option>
+
+
+            </select>
+        </div>
+
+        <div id="search-bar"><input id="inputText" type="text" placeholder=" Type service name to find hotals">
+        </div>
+    </div>
+    <div id="btn">
+        <button id="high">High-Low-Price</button>
+        <button id="low">Low-High-Price</button>
+    </div>
+
+    <div id="integration">
+        <!-- Here Append All the integration   -->
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    let userdata = []
+
+    let integration = document.getElementById("integration")
+
+    let promis = fetch("./data.json")
+
+    promis.then((resolve) => {
+        return resolve.json();
+    })
+        .then((resolve) => {
+
+            userdata = resolve
+            make(resolve)
+            // console.log(resolve)
+        })
+        .catch((erorr) => {
+            console.log(erorr)
+        })
+
+
+
+
+    function make(data) {
+        integration.innerHTML = null
+
+        data.forEach((element, index) => {
+
+
+            let card = document.createElement("div")
+
+            let img = document.createElement("img")
+
+            img.setAttribute("src", element.img)
+
+            let name = document.createElement("h3")
+            name.innerText = element.name
+            let city = document.createElement("h4")
+            city.innerText = element.city
+            let location = document.createElement("h4")
+            location.innerText = element.location
+            let price = document.createElement("h4")
+            price.innerText = element.price
+            let book = document.createElement("h3")
+            book.innerText = "book now"
+
+            // let dis = document.createElement("p")
+            // dis.innerText = element.dis
+            // let category = document.createElement("h4")
+
+            // category.innerText = element.category
+
+
+            card.append(img, name, city, location, price,book)
+            integration.append(card)
+
+        });
+
+
+    }
+
+    //  search part
+
+
+    document.getElementById("inputText").addEventListener("input", (e) => {
+
+        console.log(e.target.value)
+        console.log(userdata)
+        let newdata = userdata.filter((ele, ind) => {
+
+            if (ele.location.includes(e.target.value)) {
+                return ele
+            }
+
+
+        })
+
+        make(newdata)
+    });
+
+
+
+
+
+
+
+
+
+    // fillter part
+    let filter = document.getElementById("filter")
+
+    filter.addEventListener("change", (e) => {
+
+        let newfilter = userdata.filter((ele, ind) => {
+
+            if (e.target.value === ele.city) {
+                return ele
+            }
+
+        })
+        if (newfilter.length == 0) {
+            make(userdata)
+        }
+        else {
+            make(newfilter)
+        }
+
+    })
+
+
+    // high low
+
+    let high = document.getElementById("high")
+    let low = document.getElementById("low")
+
+    high.addEventListener("click", () => {
+
+        userdata.sort((a, b) => b.price - a.price)
+        make(userdata)
+    })
+    low.addEventListener("click", () => {
+
+        userdata.sort((a, b) => a.price - b.price)
+        make(userdata)
+    })
+
+</script>

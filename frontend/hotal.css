@@ -7,16 +7,12 @@ background: rgb(243, 237, 237);
 background-repeat: no-repeat;
 background-image:linear-gradient( to bottom, #072546, #0e3868);
 background-size: 100% 600px;
-/* display: flex; */
+display: flex;
 justify-content: center;
-/* padding-left: 5% */
-
 
 }
 .main{
- width: 90%;
- padding-left: 5%
-
+ width: 80%;
 }
 .logo{
     height: 50px;
@@ -102,6 +98,7 @@ margin-top: 20px;
 .city div:nth-child(1){
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    width: 150%;
 }
 .city div p{
  font-size: 15px;
@@ -120,7 +117,6 @@ margin-top: 20px;
 .select-type p{
     font-size: 15px;
     margin: 10px;
-    /* width: 100%; */
 }
 .select-type span{
     display: flex;
@@ -153,13 +149,12 @@ margin-top: 20px;
 .new{
     position: absolute;
     bottom: -150px;
-    width: 1400px;
+    width: 1300px;
     padding-bottom: 90px;
-    /* padding-right: 40px; */
 }
 
 .new-card{
-    width: 450px;
+    width: 400px;
     height: 100px;
     background: white;
     border-radius: 8px;
@@ -180,7 +175,7 @@ margin-top: 20px;
 .upfooter{
     position: absolute;
     bottom: -400px;
-    width: 1400px;
+    width: 1300px;
     text-align: justify;
     font-size: 15px;
 }
@@ -189,29 +184,15 @@ margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.category a:nth-child(1){
+.category a:nth-child(2){
     text-decoration: none;
     color: rgb(105, 170, 244);
 }
-.category a:nth-child(2){
+.category a:nth-child(1){
     text-decoration: none;
     color:black
 }
-#nav{
-    display: flex;
-    justify-content: space-between;
-    /* position: fixed; */
-    margin-bottom: 20px;
-}
-#log{
-display: flex;
-gap: 20px;
-color: #f2ecec;
-}
-#log a{
-    text-decoration: none;
-    color: #f2ecec;
-}
+
 #button{
     margin-left: 30px;
    background-color: #065af3;
@@ -223,6 +204,5 @@ color: #f2ecec;
     background-color: #065af3;
     font-size: 20px;
     border: none;
-    /* width: 50%; */
-    /* padding: 10px; */
+   
 }

@@ -1,39 +1,30 @@
-const express = require("express")
-const mongoose = require("mongoose")
 require("dotenv").config()
-const {connecton} = require("./config/db")
-const {adminrouter} = require("./router/admin")
-const {userrouter} = require("./router/user")
+const express = require("express")
+const app = express()
+const {connection} = require("./config/db")
+
+const {jwtcheck} = require("./middelware/middel")
+const cors = require("cors")
+const {userRouter} = require("./router/user")
 const {hotalrouter} = require("./router/hotal")
 
-const {validator,tokenverify} = require("./middelware/middel")
-const app = express()
+
+app.use(cors())
 app.use(express.json())
 
 
+app.use('/user',userRouter)
+app.use("/hotal",hotalrouter)
+app.use(jwtcheck)
+app.get("/",(req,res)=>{res.send({msg:`Welcome to home route`})})
 
-app.get("/",(req,res)=>{
-      res.send("welcome to home page")
+
+app.listen(process.env.PORT,async()=>{
+    try{await connection
+        console.log(`DB connected ...`)
+    }catch(err){console.log(err)}
+    console.log(`Server runing on port ${process.env.PORT}`)
 })
 
 
 
-
-
-
-
-
-
-
-
-app.listen(process.env.port,async()=>{
-    try{
-        await connecton
-        console.log("connected to db")
-
-    }catch(err){
-       console.log({"mes":err.message})
-    }
-    console.log(`server is awake  at  ${process.env.port}....`)
-})
- 

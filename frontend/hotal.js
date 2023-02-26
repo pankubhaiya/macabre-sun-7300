@@ -2,24 +2,19 @@
 let fd = document.getElementById("fd")
 let from = document.getElementById("from")
 let fs = document.getElementById("fs")
-
+let fa = document.getElementsByClassName("fa")
 
 fd.addEventListener("click",()=>{
       from.style.display="none"
       fs.style.display="block"
+      fa.style.display="block"
+})
+fd.addEventListener("click",()=>{
      
 })
- 
 
 
-let td = document.getElementById("td")
-let to = document.getElementById("to")
-let ts = document.getElementById("ts")
 
-td.addEventListener("click",()=>{
-      to.style.display="none"
-      ts.style.display="block"
-})
 
 // diparcher date
 
@@ -48,6 +43,9 @@ rdiv.addEventListener("click",()=>{
 
 
 
+
+
+
 let botton = document.getElementById("button")
 
 
@@ -55,9 +53,7 @@ botton.addEventListener("click",()=>{
      from.innerHTML=fs.value
     from.style.display="block"
     fs.style.display="none"
-    to.innerHTML=ts.value
-    to.style.display="block"
-    ts.style.display="none"
+ 
      
     departur.innerHTML=dd.value
     departur.style.display="block"
@@ -68,4 +64,3 @@ botton.addEventListener("click",()=>{
     rd.style.display="none"
 
 })
-
